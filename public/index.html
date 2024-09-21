@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>JWT Authentication</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <p id="login-status">You are currently not logged in.</p>
+
+    <div id="div-login" class="flex">
+      <h1>User Login</h1>
+      <form id="form-login" class="flex">
+        <input type="text" name="email" placeholder="Email Address">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+      </form>
+      <div id="g_id_onload"
+           data-client_id="70912245721-40neqr6u551m5eg1vreiml0v2sog9cc5.apps.googleusercontent.com"
+           data-login_uri="/login"
+           data-auto_prompt="false">
+      </div>
+      <div class="g_id_signin" data-type="standard"></div>
+    </div>
+
+    <div id="div-users" class="flex">
+      <h2>User List</h2>
+      <button id="button-get-users">Fetch Users</button>
+      <ul id="user-list"></ul>
+    </div>
+
+    <div class="flex">
+      <h2>Refresh Your Token</h2>
+      <button id="button-refresh-token">Refresh Token</button>
+    </div>
+
+    <div class="flex">
+      <h2>Logout</h2>
+      <button id="button-delete-token">Logout & Delete Token</button>
+    </div>
+  </div>
+  
+  <script type="module" src="jwt-decode.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
